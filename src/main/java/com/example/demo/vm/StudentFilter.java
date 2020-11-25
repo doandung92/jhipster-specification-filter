@@ -1,19 +1,11 @@
 package com.example.demo.vm;
 
+import lombok.Data;
+
 import java.io.Serializable;
-import java.util.List;
 
+@Data
 public class StudentFilter implements Serializable {
-    private List<String> cities;
-
-    public StudentFilter() {
-    }
-
-    public List<String> getCities() {
-        return cities;
-    }
-
-    public void setCities(List<String> cities) {
-        this.cities = cities;
-    }
+    private String cities;
+    private String query;
 }

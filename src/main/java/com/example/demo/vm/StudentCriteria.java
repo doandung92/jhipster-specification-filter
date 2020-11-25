@@ -2,15 +2,19 @@ package com.example.demo.vm;
 
 import io.github.jhipster.service.Criteria;
 import io.github.jhipster.service.filter.StringFilter;
+import lombok.Data;
 
+@Data
 public class StudentCriteria implements Criteria {
-    StringFilter city;
+    private StringFilter city;
+    private String query;
 
     public StudentCriteria() {
     }
 
     private StudentCriteria(StudentCriteria other) {
         this.city = other.getCity() == null ?null: other.getCity().copy();
+        this.query = other.query;
     }
 
     @Override
@@ -18,11 +22,4 @@ public class StudentCriteria implements Criteria {
         return new StudentCriteria(this);
     }
 
-    public StringFilter getCity() {
-        return city;
-    }
-
-    public void setCity(StringFilter city) {
-        this.city = city;
-    }
 }
